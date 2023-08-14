@@ -14,4 +14,8 @@ export class PostsService {
     };
     return this.http.post<any>(this.apiUrl + 'createpost', post);
   }
+
+  getAll(): Observable<any> {
+    return this.http.get<any>(this.apiUrl);
+  }
 }

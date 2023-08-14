@@ -12,8 +12,10 @@ export class LoginComponent {
   onFormSubmit(form: any) {
     this._us.authenticate(form.value).subscribe(
       (data) => {
-        this.router.navigate(['/home']);
+        // console.log({data})
         this._us.setAuthentication(true);
+        this._us.setIsAdmin(data.isAdmin)
+        this.router.navigate(['/home']);
       },
       (error) => {
         console.error(error);

@@ -7,7 +7,8 @@ import { Observable, shareReplay, tap } from 'rxjs';
 })
 export class UsersService {
   private apiUrl = 'http://3.17.216.66:3000/users/';
-  public authenticated = false
+  public authenticated = false;
+  private isAdmin = false;
 
   constructor(private http: HttpClient) {}
 
@@ -15,11 +16,11 @@ export class UsersService {
     return this.http.post<any>(this.apiUrl + 'register', newUser);
   }
 
-  isAuthenticated(){
+  isAuthenticated() {
     return this.authenticated;
   }
 
-  setAuthentication(auth:boolean){
+  setAuthentication(auth: boolean) {
     this.authenticated = auth;
   }
 
@@ -31,5 +32,17 @@ export class UsersService {
   }
   private setSession(authResult: any) {
     localStorage.setItem('id_token', authResult.token);
+  }
+
+  setIsAdmin(value:boolean){
+    this.isAdmin = value;
+  }
+  
+  getIsAdmin(){
+    return this.isAdmin;
+  }
+
+  getAll(): Observable<any> {
+    return this.http.get<any>(this.apiUrl);
   }
 }
