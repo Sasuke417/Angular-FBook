@@ -1,6 +1,10 @@
 <div class="main">
   <app-user></app-user>
   <div class="secondSection">
-    <app-network-user></app-network-user>
+    <span *ngIf="showStatus">{{ status }}</span>
+    <app-network-user
+      *ngFor="let friend of friendsList; let i = index"
+      [friendIndex]="i + 1 + nthNumber(i + 1)"
+    ></app-network-user>
   </div>
 </div>

@@ -27,6 +27,7 @@
       <label for="floatingTextarea2">Write a Post</label>
     </div>
     <div class="existingPosts">
+      <span *ngIf="showStatus">{{status}}</span>
       <div class="post" *ngFor="let post of postList"><span>{{post.post}}</span></div>
     </div>
   </div>

@@ -3,9 +3,9 @@
         <img src="../../../assets/user.svg" alt="" class="userImage">
     </div>
     <div>
-        {{"name"}}
+        {{friendIndex}}
     </div>
-    <div class="request">
+    <div class="request" *ngIf="requestRender">
         {{requestStatus}}
     </div>
 </div>

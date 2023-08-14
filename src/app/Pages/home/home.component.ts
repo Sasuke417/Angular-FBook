@@ -11,9 +11,11 @@ export class HomeComponent implements OnInit {
   showTextArea = false;
   isPosted: string = '';
   postList: any;
+  status = 'Loading....';
+  showStatus = true;
   constructor(private _ps: PostsService) {}
   ngOnInit(): void {
-    this.fillPostsBox()
+    this.fillPostsBox();
   }
   postLinkClick() {
     this.showTextArea = true;
@@ -21,11 +23,11 @@ export class HomeComponent implements OnInit {
   postButtonClick() {
     this._ps.create(this.textArea).subscribe(
       (data) => {
-        console.log({ data });
+        // console.log({ data });
         this.isPosted = 'Post added sussesfully';
       },
       (error) => {
-        this.isPosted = 'Some error occurred is Posting!!!';
+        this.isPosted = 'An error occurred while Posting!!!';
         console.error(error);
       }
     );
@@ -34,9 +36,12 @@ export class HomeComponent implements OnInit {
   fillPostsBox() {
     this._ps.getAll().subscribe(
       (data) => {
+        this.showStatus = false;
+        this.status = '';
         this.postList = data;
       },
       (error) => {
+        this.status = 'An error occurred while fetching the posts list!!!';
         console.error(error);
       }
     );

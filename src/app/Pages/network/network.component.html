@@ -1,9 +1,11 @@
 <div class="main">
   <app-user></app-user>
   <div class="secondSection">
-    <app-network-user *ngFor="let friend of networkList;let i = index"
-      
-      [requestStatus]="'Request Pending'"
+    <span *ngIf="showStatus">{{status}}</span>
+    <app-network-user
+      *ngFor="let friend of networkList; let i = index"
+      [friendIndex]="i + 1 + nthNumber(i + 1)"
+      [requestStatus]="friend.status"
     ></app-network-user>
   </div>
 </div>
