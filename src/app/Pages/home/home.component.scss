@@ -1,0 +1,29 @@
+.main{
+    display: flex;
+    padding: 100px;
+}
+.secondSection{
+    padding-left: 50px;
+}
+.links{
+    display: flex;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+}
+.post{
+    margin: 20px;
+}
+a{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.linksSection{
+    border-right: 1px solid black;
+}
+.existingPosts{
+    margin-top: 20px;
+    height: 500px;
+    width: 800px;
+    border: 1px solid black;
+}
