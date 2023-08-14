@@ -1,6 +1,9 @@
 <div class="main">
   <app-user></app-user>
   <div class="secondSection">
-    <app-network-user></app-network-user>
+    <app-network-user *ngFor="let friend of networkList;let i = index"
+      
+      [requestStatus]="'Request Pending'"
+    ></app-network-user>
   </div>
 </div>
