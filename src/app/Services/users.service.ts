@@ -6,13 +6,13 @@ import { Observable, shareReplay, tap } from 'rxjs';
   providedIn: 'root',
 })
 export class UsersService {
-  private apiUrl = 'http://3.17.216.66:3000/users';
+  private apiUrl = 'http://3.17.216.66:3000/users/';
   public authenticated = false
 
   constructor(private http: HttpClient) {}
 
   register(newUser: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl + '/register', newUser);
+    return this.http.post<any>(this.apiUrl + 'register', newUser);
   }
 
   isAuthenticated(){
@@ -24,7 +24,7 @@ export class UsersService {
   }
 
   authenticate(user: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl + '/authenticate', user).pipe(
+    return this.http.post<any>(this.apiUrl + 'authenticate', user).pipe(
       tap((res: any) => this.setSession(res)),
       shareReplay()
     );

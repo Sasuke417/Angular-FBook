@@ -18,7 +18,8 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { UserComponent } from './Components/user/user.component';
 import { NetworkUserComponent } from './Components/network-user/network-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from './Interceptors/HeaderInterceptor';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     SettingsComponent,
     NavbarComponent,
     UserComponent,
-    NetworkUserComponent
+    NetworkUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +46,13 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

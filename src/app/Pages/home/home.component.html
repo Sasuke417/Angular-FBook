@@ -2,8 +2,28 @@
   <app-user></app-user>
   <div class="secondSection">
     <div class="links">
-      <div class="linksSection"><a href="">Write a Post</a><a href="">Upload a Pic</a></div>
-      <button class="btn btn-primary post">Post</button>
+      <div class="linksSection">
+        <a
+          (click)="postLinkClick()"
+          class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+          >Write a Post</a
+        ><a
+          href=""
+          class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+          >Upload a Pic</a
+        >
+      </div>
+      <button class="btn btn-primary post" (click)="postButtonClick()">Post</button>
+    </div>
+    <div class="form-floating mt-3" *ngIf="showTextArea">
+      <textarea
+        class="form-control"
+        placeholder="Leave a comment here"
+        id="floatingTextarea2"
+        style="height: 100px"
+        [(ngModel)]="textArea"
+      ></textarea>
+      <label for="floatingTextarea2">Write a Post</label>
     </div>
     <div class="existingPosts"></div>
   </div>
