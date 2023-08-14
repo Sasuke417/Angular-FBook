@@ -9,6 +9,7 @@ export class UsersService {
   private apiUrl = 'http://3.17.216.66:3000/users/';
   public authenticated = false;
   private isAdmin = false;
+  userData: any;
 
   constructor(private http: HttpClient) {}
 
@@ -44,5 +45,17 @@ export class UsersService {
 
   getAll(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
+  }
+
+  setUserData(data:any){
+    this.userData = data;
+  }
+
+  getUserData(){
+    return this.userData;
+  }
+
+  update(newUser: any): Observable<any> {
+    return this.http.put<any>(this.apiUrl + this.userData._id, newUser);
   }
 }
