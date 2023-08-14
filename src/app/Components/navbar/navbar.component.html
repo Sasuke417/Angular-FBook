@@ -2,7 +2,7 @@
   <a class="navbar-brand" (click)="onLogoClick()">FBOOK</a>
 
   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-    <ul class="navbar-nav" *ngIf="!authenticated; else loggedIn">
+    <ul class="navbar-nav" *ngIf="!_us.isAuthenticated(); else loggedIn">
       <li class="nav-item active">
         <a class="nav-link" routerLink="/registration">Register</a>
       </li>

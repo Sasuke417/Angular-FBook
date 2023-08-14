@@ -9,6 +9,7 @@ import { UsersService } from 'src/app/Services/users.service';
   styleUrls: ['./registration.component.scss'],
 })
 export class RegistrationComponent {
+  errorView = false;
   constructor(private router: Router, private _us: UsersService) {}
   navigateToLogin() {
     this.router.navigate(['/']);
@@ -16,9 +17,10 @@ export class RegistrationComponent {
   onFormSubmit(form: any) {
     this._us.register(form.value).subscribe(
       (data) => {
-        console.log({ data });
+        this.router.navigate(['/']);
       },
       (error) => {
+        this.errorView = true;
         console.error(error);
       }
     );

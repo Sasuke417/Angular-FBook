@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsersService } from 'src/app/Services/users.service';
 
 @Component({
@@ -7,14 +8,17 @@ import { UsersService } from 'src/app/Services/users.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  constructor(private _us: UsersService){};
+  constructor(private _us: UsersService, private router: Router) {}
   onFormSubmit(form: any) {
-    console.log(form.value);
     this._us.authenticate(form.value).subscribe(
       (data) => {
-        console.log(data);
+        this.router.navigate(['/home']);
+        this._us.setAuthentication(true);
       },
-      (error) => console.error(error)
+      (error) => {
+        console.error(error);
+        this._us.setAuthentication(false);
+      }
     );
   }
 }

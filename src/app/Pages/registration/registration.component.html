@@ -42,5 +42,5 @@
       <button type="submit" class="btn btn-primary">Register</button>
     </div>
   </form>
-  {{registerForm.value | json}}
+  <div *ngIf="errorView">Registeration Failed. An error occured.</div>
 </div>
