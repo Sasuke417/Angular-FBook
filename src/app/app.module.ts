@@ -20,6 +20,7 @@ import { NetworkUserComponent } from './Components/network-user/network-user.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './Interceptors/HeaderInterceptor';
+import { PostComponent } from './Components/post/post.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AuthInterceptor } from './Interceptors/HeaderInterceptor';
     NavbarComponent,
     UserComponent,
     NetworkUserComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,

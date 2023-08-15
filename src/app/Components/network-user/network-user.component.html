@@ -5,7 +5,8 @@
     <div>
         {{friendIndex}}
     </div>
-    <div class="request" >
+    <div class="request" (click)="sendRequest()">
         {{requestStatus}}
     </div>
 </div>
+<span *ngIf="showStatus">{{status}}</span>

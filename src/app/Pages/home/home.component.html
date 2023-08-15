@@ -34,9 +34,10 @@
     </div>
     <div class="existingPosts">
       <span *ngIf="showStatus">{{ status }}</span>
-      <div class="post" *ngFor="let post of postList">
+      <!-- <div class="post" *ngFor="let post of postList">
         <span>{{ post.post }}</span>
-      </div>
+      </div> -->
+      <app-post [post]="post.post" *ngFor="let post of postList"></app-post>
     </div>
   </div>
 </div>

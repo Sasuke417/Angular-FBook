@@ -1,0 +1,12 @@
+.post {
+  margin: 5px;
+  border: 1px solid black;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: space-between;
+}
+a {
+  cursor: pointer;
+}

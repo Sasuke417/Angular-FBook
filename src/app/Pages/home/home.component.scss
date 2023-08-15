@@ -1,41 +1,41 @@
-.main{
-    display: flex;
-    padding: 100px;
+.main {
+  display: flex;
+  padding: 100px;
 }
-.secondSection{
-    padding-left: 50px;
+.secondSection {
+  padding-left: 50px;
 }
-.links{
-    display: flex;
-    border: 1px solid black;
-    align-items: center;
-    justify-content: center;
+.links {
+  display: flex;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
 }
-.post{
-    margin: 20px;
+.post {
+  margin: 20px;
 }
-a{
-    padding-left: 10px;
-    padding-right: 10px;
+a {
+  padding-left: 10px;
+  padding-right: 10px;
 }
-a:hover{
-    cursor: pointer;
+a:hover {
+  cursor: pointer;
 }
-.linksSection{
-    border-right: 1px solid black;
+.linksSection {
+  border-right: 1px solid black;
 }
-.existingPosts{
-    margin-top: 20px;
-    min-height: 500px;
-    width: 800px;
-    border: 1px solid black;
+.existingPosts {
+  margin-top: 20px;
+  min-height: 500px;
+  width: 800px;
+  border: 1px solid black;
 }
-.post{
-    display: flex;
-    margin: 5px;
-    border: 1px solid black;
-    min-height: 40px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+.post {
+  display: flex;
+  margin: 5px;
+  border: 1px solid black;
+  min-height: 40px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
