@@ -24,7 +24,10 @@
         ngModel
       />
     </div>
-    <button type="submit" class="btn btn-primary">Login</button>
+    <div class="buttonContainer">
+      <button type="submit" class="btn btn-primary">Login</button>
+      <button type="submit" class="btn btn-primary" (click)="navToForgotPasswordPage()">Forgot Password</button>
+    </div>
   </form>
   <div *ngIf="loginError">An Error Occured while login</div>
 </div>

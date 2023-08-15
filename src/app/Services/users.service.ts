@@ -17,6 +17,9 @@ export class UsersService {
     return this.http.post<any>(this.apiUrl + 'register', newUser);
   }
 
+  findUserByEmail(email: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl + 'finduserbyemail', { email });
+  }
   isAuthenticated() {
     return this.authenticated;
   }
@@ -35,11 +38,11 @@ export class UsersService {
     localStorage.setItem('id_token', authResult.token);
   }
 
-  setIsAdmin(value:boolean){
+  setIsAdmin(value: boolean) {
     this.isAdmin = value;
   }
-  
-  getIsAdmin(){
+
+  getIsAdmin() {
     return this.isAdmin;
   }
 
@@ -47,11 +50,11 @@ export class UsersService {
     return this.http.get<any>(this.apiUrl);
   }
 
-  setUserData(data:any){
+  setUserData(data: any) {
     this.userData = data;
   }
 
-  getUserData(){
+  getUserData() {
     return this.userData;
   }
 

@@ -5,6 +5,7 @@
     <app-network-user
       *ngFor="let friend of friendsList; let i = index"
       [friendIndex]="i + 1 + nthNumber(i + 1)"
+      [requestStatus]="friend.status"
     ></app-network-user>
   </div>
 </div>

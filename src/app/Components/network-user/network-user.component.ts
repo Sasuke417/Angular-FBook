@@ -10,7 +10,7 @@ export class NetworkUserComponent {
   @Input() requestStatus = '';
   @Input() friendIndex = '';
   requestRender = false;
-  constructor(private router: Router) {
-    this.requestRender = this.router.url == '/network';
-  }
+  // constructor(private router: Router) {
+  //   this.requestRender = this.router.url == '/network';
+  // }
 }
