@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
     this.fillPostsBox();
   }
   onFileSelected(event: Event) {
+    this.isPosted = "";
     const target = event.target as HTMLInputElement;
     this.file = (target.files as FileList)[0];
   }
