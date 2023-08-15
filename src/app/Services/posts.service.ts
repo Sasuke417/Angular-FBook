@@ -8,11 +8,8 @@ import { Observable } from 'rxjs';
 export class PostsService {
   private apiUrl = 'http://3.17.216.66:3000/posts/';
   constructor(private http: HttpClient) {}
-  create(postInput: string): Observable<any> {
-    const post = {
-      post: postInput,
-    };
-    return this.http.post<any>(this.apiUrl + 'createpost', post);
+  create(postInput: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl + 'createpost', postInput);
   }
 
   getAll(): Observable<any> {

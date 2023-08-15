@@ -8,14 +8,17 @@
           class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
           >Write a Post</a
         ><a
-          href=""
+          (click)="uploadPicLinkClick()"
           class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
           >Upload a Pic</a
         >
       </div>
-      <button class="btn btn-primary post" (click)="postButtonClick()">Post</button>
+      <button class="btn btn-primary post" (click)="postButtonClick()">
+        Post
+      </button>
     </div>
-    <div>{{isPosted}}</div>
+    <span *ngIf="showStatus1">{{status1}}</span>
+    <div>{{ isPosted }}</div>
     <div class="form-floating mt-3" *ngIf="showTextArea">
       <textarea
         class="form-control"
@@ -26,9 +29,14 @@
       ></textarea>
       <label for="floatingTextarea2">Write a Post</label>
     </div>
+    <div class="text-center mt-3" *ngIf="showPicSelectionArea">
+      <input class="form-control" type="file" (change)="onFileSelected($event)" />
+    </div>
     <div class="existingPosts">
-      <span *ngIf="showStatus">{{status}}</span>
-      <div class="post" *ngFor="let post of postList"><span>{{post.post}}</span></div>
+      <span *ngIf="showStatus">{{ status }}</span>
+      <div class="post" *ngFor="let post of postList">
+        <span>{{ post.post }}</span>
+      </div>
     </div>
   </div>
 </div>
